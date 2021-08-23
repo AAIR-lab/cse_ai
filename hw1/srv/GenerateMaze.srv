@@ -1,0 +1,5 @@
+uint32 dimension
+uint32 obstacles
+uint32 seed
+---
+uint32 done

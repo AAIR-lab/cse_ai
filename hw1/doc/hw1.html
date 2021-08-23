@@ -1,0 +1,747 @@
+
+
+<!DOCTYPE html>
+<html class="writer-html4" lang="en" >
+<head>
+  <meta charset="utf-8">
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <title>Plagiarism Warning &mdash; CSE 471 - HW 1  documentation</title>
+  
+
+  
+  <link rel="stylesheet" href="_static/css/theme.css" type="text/css" />
+  <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
+
+  
+  
+  
+  
+
+  
+  <!--[if lt IE 9]>
+    <script src="_static/js/html5shiv.min.js"></script>
+  <![endif]-->
+  
+    
+      <script type="text/javascript" id="documentation_options" data-url_root="./" src="_static/documentation_options.js"></script>
+        <script type="text/javascript" src="_static/jquery.js"></script>
+        <script type="text/javascript" src="_static/underscore.js"></script>
+        <script type="text/javascript" src="_static/doctools.js"></script>
+        <script type="text/javascript" src="_static/language_data.js"></script>
+    
+    <script type="text/javascript" src="_static/js/theme.js"></script>
+
+    
+    <link rel="index" title="Index" href="genindex.html" />
+    <link rel="search" title="Search" href="search.html" />
+    <link rel="prev" title="Welcome to CSE 471 Fall 2020 - HW1!" href="index.html" /> 
+</head>
+
+<body class="wy-body-for-nav">
+
+   
+  <div class="wy-grid-for-nav">
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+          
+
+          
+            <a href="index.html" class="icon icon-home" alt="Documentation Home"> CSE 471 - HW 1
+          
+
+          
+          </a>
+
+          
+
+          
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+
+          
+        </div>
+
+        
+        <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+          
+            
+            
+              
+            
+            
+              <p class="caption"><span class="caption-text">Contents:</span></p>
+<ul class="current">
+<li class="toctree-l1 current"><a class="current reference internal" href="#">Plagiarism Warning</a></li>
+<li class="toctree-l1"><a class="reference internal" href="#homework-1-programming">Homework 1 - Programming</a></li>
+<li class="toctree-l1"><a class="reference internal" href="#setting-up-the-hw1-directory">Setting up the <strong>hw1</strong> Directory</a></li>
+<li class="toctree-l1"><a class="reference internal" href="#environment-description">Environment Description</a></li>
+<li class="toctree-l1"><a class="reference internal" href="#implementing-search-algorithms">Implementing Search Algorithms</a></li>
+<li class="toctree-l1"><a class="reference internal" href="#testing-your-implementation">Testing your Implementation</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="#search-py">search.py</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="#checking-execution-on-turtlebot3">Checking Execution on Turtlebot3</a></li>
+<li class="toctree-l1"><a class="reference internal" href="#preparing-your-submission-to-submit-to-gradescope">Preparing your Submission to Submit to Gradescope</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="#submitting-your-homework">Submitting Your Homework</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="#tips-and-suggestions">Tips and Suggestions</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="#hints-for-designing-the-extra-credit-heuristic">Hints for Designing the Extra Credit Heuristic</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="#api">API</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="#class-state">class State</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#class-node">class Node</a></li>
+</ul>
+</li>
+</ul>
+
+            
+          
+        </div>
+        
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" aria-label="top navigation">
+        
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="index.html">CSE 471 - HW 1</a>
+        
+      </nav>
+
+
+      <div class="wy-nav-content">
+        
+        <div class="rst-content">
+        
+          
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div role="navigation" aria-label="breadcrumbs navigation">
+
+  <ul class="wy-breadcrumbs">
+    
+      <li><a href="index.html" class="icon icon-home"></a> &raquo;</li>
+        
+      <li>Plagiarism Warning</li>
+    
+    
+      <li class="wy-breadcrumbs-aside">
+        
+            
+        
+      </li>
+    
+  </ul>
+
+  
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+            
+  <div class="section" id="plagiarism-warning">
+<h1>Plagiarism Warning<a class="headerlink" href="#plagiarism-warning" title="Permalink to this headline">¶</a></h1>
+<p>Powerful copy-detection systems will be used as part of grading, so please <strong>DO NOT</strong> submit/use any piece of code that is not <strong>your own</strong> work. These systems can easily catch instances where users change variable names, etc. from copied code.</p>
+<p>If you are stuck at any point, you can approach the professor or TA for help.</p>
+</div>
+<div class="section" id="homework-1-programming">
+<h1>Homework 1 - Programming<a class="headerlink" href="#homework-1-programming" title="Permalink to this headline">¶</a></h1>
+<p>Welcome to Programming section of Homework 1 for CSE 471 - Fall 2020.</p>
+<p>This document contains several instructions to help you with the running
+and submitting the assignment.</p>
+</div>
+<div class="section" id="setting-up-the-hw1-directory">
+<h1>Setting up the <strong>hw1</strong> Directory<a class="headerlink" href="#setting-up-the-hw1-directory" title="Permalink to this headline">¶</a></h1>
+<p>We assume that you have completed the setup as instructed in Homework 0.</p>
+<ol class="arabic">
+<li><p class="first">Unzip the “hw1.zip” file that you have downloaded from Canvas.</p>
+</li>
+<li><p class="first">Copy the “hw1” folder that was unzipped to <cite>~/catkin_ws/src/</cite>.</p>
+<blockquote>
+<div><div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>cp -r &lt;download_path&gt;/hw1/ ~/catkin_ws/src/
+</pre></div>
+</div>
+</div></blockquote>
+</li>
+<li><p class="first">Change the permission of all Python scripts to make them executable.</p>
+<blockquote>
+<div><div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>chmod u+x ~/catkin_ws/src/hw1/scripts/*.py
+</pre></div>
+</div>
+</div></blockquote>
+</li>
+<li><p class="first">Run catkin_make from your catkin workspace.</p>
+<blockquote>
+<div><div class="highlight-bash notranslate"><div class="highlight"><pre><span></span><span class="nb">cd</span> ~/catkin_ws <span class="o">&amp;&amp;</span> catkin_make
+</pre></div>
+</div>
+</div></blockquote>
+</li>
+<li><p class="first">Source <cite>setup.bash</cite>.</p>
+<blockquote>
+<div><div class="highlight-bash notranslate"><div class="highlight"><pre><span></span><span class="nb">source</span> ~/catkin_ws/devel/setup.bash
+</pre></div>
+</div>
+</div></blockquote>
+</li>
+</ol>
+</div>
+<div class="section" id="environment-description">
+<h1>Environment Description<a class="headerlink" href="#environment-description" title="Permalink to this headline">¶</a></h1>
+<p>The image below shows an example of the maze environment that the Homework 1 turtlebot3 operates in.
+The goal is the red can; all other cans are obstacles that need to be avoided.</p>
+<div class="figure">
+<a class="reference internal image-reference" href="_images/cans.png"><img alt="A sample maze" src="_images/cans.png" style="width: 687.5px; height: 438.0px;" /></a>
+</div>
+<p>Some of the terms that we use throughout the assignment are:</p>
+<ol class="arabic">
+<li><dl class="first docutils">
+<dt>Grid Dimensions: Size of the square grid.</dt>
+<dd><div class="first last admonition note">
+<p class="first admonition-title">Note</p>
+<p>Actual grid size used for navigation is different from what is seen in Gazebo environment. Each of the square seen in Gazebo is divided into 4 equal squares.</p>
+<table border="1" class="docutils">
+<colgroup>
+<col width="50%" />
+<col width="50%" />
+</colgroup>
+<tbody valign="top">
+<tr class="row-odd"><td><div class="first last figure" id="id1">
+<img alt="_images/grid.png" src="_images/grid.png" />
+<p class="caption"><span class="caption-text">Fig 1. Grid visible in Gazebo</span></p>
+</div>
+</td>
+<td><div class="first last figure" id="id2">
+<img alt="_images/grid_actual.png" src="_images/grid_actual.png" />
+<p class="caption"><span class="caption-text">Fig 2. Actual navigation grid</span></p>
+</div>
+</td>
+</tr>
+</tbody>
+</table>
+<p class="last">Hence, if you have to go from point A to B in Gazebo environment using ‘MoveF’ action, you will have to give ‘MoveF’ command twice. If you give the ‘MoveF’ command once, the TurtleBot will stop at T.</p>
+</div>
+</dd>
+</dl>
+</li>
+<li><p class="first">Goal: A can of red color.</p>
+</li>
+<li><p class="first">Obstacles: Smaller cans obstructing the TurtleBot’s path.</p>
+</li>
+<li><dl class="first docutils">
+<dt>Actions: Actions includes {MoveF, TurnCW, TurnCCW}. Move actions move the turtlebot forward along an edge, and Turn actions rotate it clockwise or counterclockwise.</dt>
+<dd><ul class="first last simple">
+<li>Cost of the MoveF action is 1.</li>
+<li>Cost of the TurnCW and TurnCCW actions is 2.</li>
+</ul>
+</dd>
+</dl>
+</li>
+<li><dl class="first docutils">
+<dt>State:  State of the turtlebot represented as (x, y, <img class="math" src="_images/math/c2f31c22645274c375eff7920cfdfdc18d60341f.png" alt="\phi"/>) where x and y are coordinates, <img class="math" src="_images/math/c2f31c22645274c375eff7920cfdfdc18d60341f.png" alt="\phi"/> is an orientation in {NORTH, SOUTH, EAST, WEST}.</dt>
+<dd><div class="first last figure">
+<a class="reference internal image-reference" href="_images/orientation.png"><img alt="A sample maze" src="_images/orientation.png" style="width: 255.5px; height: 174.3px;" /></a>
+</div>
+</dd>
+</dl>
+</li>
+</ol>
+</div>
+<div class="section" id="implementing-search-algorithms">
+<h1>Implementing Search Algorithms<a class="headerlink" href="#implementing-search-algorithms" title="Permalink to this headline">¶</a></h1>
+<ul class="simple">
+<li>Modify the <cite>compute_g()</cite> and <cite>compute_h()</cite> methods in the <cite>evaluate.py</cite> file. We have provided a basic template where you should write your code.</li>
+<li>Do not modify any other file. Make all the changes you need in <cite>evaluate.py</cite> only.</li>
+<li>Unless otherwise specified, use the Manhattan heuristic whenever you need to return a heuristic value.</li>
+<li><dl class="first docutils">
+<dt>Modifying evaluate.py</dt>
+<dd><ul class="first last">
+<li><dl class="first docutils">
+<dt>Do not modify the function signature of existing methods.</dt>
+<dd><ul class="first last">
+<li>Remove the <cite>raise NotImplementedError</cite> code block and replace it with the code to the compute the g-value or h-value and return this value.</li>
+<li>The returned value must be a positive integer or 0.</li>
+</ul>
+</dd>
+</dl>
+</li>
+</ul>
+</dd>
+</dl>
+</li>
+<li><dl class="first docutils">
+<dt>Both <cite>compute_g()</cite> and <cite>compute_h()</cite> have 3 parameters passed to them.</dt>
+<dd><ul class="first last">
+<li><dl class="first docutils">
+<dt>algorithm - A string that represents which algorithm is running. This is passed as a command line argument to the program.</dt>
+<dd><dl class="first last docutils">
+<dt>The required algorithms you need to handle are:</dt>
+<dd><ol class="first last arabic">
+<li>bfs - Breadth First Search</li>
+<li>ucs - Uniform Cost Search</li>
+<li>gbfs - Greedy <strong>Best</strong> First Search</li>
+<li>astar - A* Search</li>
+<li>custom-astar - (Extra credit) A* with a custom heuristic.</li>
+</ol>
+</dd>
+</dl>
+</dd>
+</dl>
+</li>
+<li><dl class="first docutils">
+<dt>node - A Node (<cite>node.py</cite>) object that is being evaluated in the search</dt>
+<dd>tree. Note that each node has all its fields already initialized prior
+to calling these functions. More information about the Node class can
+be found in the API located at the end of this document..</dd>
+</dl>
+</li>
+<li><dl class="first docutils">
+<dt>goal_state - A State (<cite>problem.py</cite>) object that represents the goal state.</dt>
+<dd>More information about the State class can be found in the API located
+at the end of this document.</dd>
+</dl>
+</li>
+</ul>
+</dd>
+</dl>
+</li>
+</ul>
+</div>
+<div class="section" id="testing-your-implementation">
+<h1>Testing your Implementation<a class="headerlink" href="#testing-your-implementation" title="Permalink to this headline">¶</a></h1>
+<p><strong>Follow these steps to locally test your implementation.</strong></p>
+<p>Fill in the necessary blocks in <cite>evaluate.py</cite> by removing the <cite>raise NotImplementedError</cite> and replacing it with your code.
+If you choose not to implement an algorithm (for example the extra credit work) simply leave the statement unchanged in
+both <cite>compute_g()</cite> and <cite>compute_h()</cite> for that algorithm.</p>
+<p>Once done, you need to execute <cite>rosrun hw1 search.py</cite> with the appropriate algorithm.
+For example, If you implemented <cite>compute_g()</cite> and <cite>compute_h()</cite> for “bfs”:</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>rosrun hw1 search.py --algorithm bfs
+</pre></div>
+</div>
+<p>This will also post plenty of output to your console giving you some valuable information about your implementation including
+any errors that were encountered. If the error field is None then that means that your implementation ran without issues.</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span><span class="o">==========================</span>
+Dimension..........: <span class="m">5</span>
+Obstacles..........: <span class="m">0</span>
+Seed...............: <span class="m">1599124437</span>
+Algorithm..........: bfs
+Error..............: NotImplementedError
+Time Taken.........: <span class="m">0</span>.01
+Nodes expanded.....: <span class="m">0</span>
+Plan Length........: <span class="m">0</span>
+Plan...............: <span class="o">[]</span>
+</pre></div>
+</div>
+<p>In the code block above, the Error output is not None. This means that there were errors encountered and you would need to debug
+the implementation. You can modify any file to debug your code, however, your final test code should only modify <cite>evaluate.py</cite> and
+leave all the other files untouched.</p>
+<div class="section" id="search-py">
+<h2>search.py<a class="headerlink" href="#search-py" title="Permalink to this headline">¶</a></h2>
+<p><cite>search.py</cite> contains several options that you can specify to change the world
+generated so that you can test different worlds.</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>rosrun hw1 search.py -h
+usage: search.py <span class="o">[</span>-h<span class="o">]</span> <span class="o">[</span>--dimension DIMENSION<span class="o">]</span> <span class="o">[</span>--obstacles OBSTACLES<span class="o">]</span>
+                 <span class="o">[</span>--seed SEED<span class="o">]</span>
+                 <span class="o">[</span>--algorithm <span class="o">{</span>all,bfs,ucs,gbfs,astar,custom-astar<span class="o">}]</span>
+                 <span class="o">[</span>--submit<span class="o">]</span> <span class="o">[</span>--output-file OUTPUT_FILE<span class="o">]</span>
+
+optional arguments:
+  -h, --help            show this <span class="nb">help</span> message and <span class="nb">exit</span>
+  --dimension DIMENSION
+                        The dimension <span class="s1">&#39;n&#39;</span> of the n x n grid.
+  --obstacles OBSTACLES
+                        The number of obstacles in the grid.
+  --seed SEED           The random seed
+  --algorithm <span class="o">{</span>all,bfs,ucs,gbfs,astar,custom-astar<span class="o">}</span>
+                        The algorithm to run
+  --submit              Run the experiments required <span class="k">for</span> submission
+  --output-file OUTPUT_FILE
+                        Store the output in the specified file
+</pre></div>
+</div>
+<p>For example to generate a world with a dimension of 5 and 2 obstacles and test
+with the “ucs” algorithm, enter the following in the terminal.</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>rosrun hw1 search.py --dimension <span class="m">5</span> --obstacles <span class="m">2</span> --algorithm ucs
+</pre></div>
+</div>
+<p>The output contains all data to reproduce the results. You can use “all” for
+algorithms to run all algorithms.</p>
+</div>
+</div>
+<div class="section" id="checking-execution-on-turtlebot3">
+<h1>Checking Execution on Turtlebot3<a class="headerlink" href="#checking-execution-on-turtlebot3" title="Permalink to this headline">¶</a></h1>
+<p>Once you have an implementation working, you can run the found solution on
+Gazebo. To do this, you need to provide an argument that instructs <cite>search.py</cite>
+to save the results to an output file.</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>rosrun hw1 search.py --output-file /tmp/test.csv
+</pre></div>
+</div>
+<p>The above command will run the default algorithm (all) along with the default
+dimension, obstacles and seed for the world and store the output in
+<cite>/tmp/test.csv</cite>. You can open this file in software like Excel or a simple
+text editor like Notepad++.</p>
+<p>To run Gazebo, execute</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>rosrun hw1 gazebo.py --input-file /tmp/test.csv
+</pre></div>
+</div>
+<p>This will open Gazebo and run each solution in the specified file.</p>
+<p>If you only want to run a single solution in the specified file, you can pick
+which solution to execute by specifying the line number that the solution
+occurs in the solution file (lines are numbered starting with 1).</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>rosrun hw1 gazebo.py --input-file /tmp/test.csv --line <span class="m">3</span>
+</pre></div>
+</div>
+<p>This will run the solution occuring at line 3 (provided the file has 3 lines)
+and will exit after that.</p>
+</div>
+<div class="section" id="preparing-your-submission-to-submit-to-gradescope">
+<h1>Preparing your Submission to Submit to Gradescope<a class="headerlink" href="#preparing-your-submission-to-submit-to-gradescope" title="Permalink to this headline">¶</a></h1>
+<p>1. When you have finished implementing all the algorithms you need to use the submit
+mode of <cite>search.py</cite></p>
+<p><strong>Run the following command to ready the submission files</strong></p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>rosrun hw1 search.py --submit
+</pre></div>
+</div>
+<p>This will run 100 different world combinations and each one of them will be run
+with a time limit of 5 mins (300 seconds). A file called <cite>hw1_results.csv</cite> will
+be created in the <cite>~/catkin_ws/src/hw1/scripts/</cite> directory which will contain
+results of the run. <strong>HINT</strong>: Make sure that there are no TimeoutErrors in the
+results. If there are, then its likely your implementation is incorrect.</p>
+<div class="admonition warning">
+<p class="first admonition-title">Warning</p>
+<p class="last">The submission runs several tests so make sure you run this command plenty
+of time before the submission deadline.</p>
+</div>
+<div class="admonition note">
+<p class="first admonition-title">Note</p>
+<p class="last">Submit mode will not produce Debug output. Instead <cite>hw1_results.csv</cite>
+will contain the Debug output in a .csv format.</p>
+</div>
+<p>Execute the following to ensure that the <cite>hw1_results.csv</cite> file was created.</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>ls ~/catkin_ws/src/hw1/scripts/
+/home/cse471/catkin_ws/src/hw1/scripts/hw1_results.csv
+</pre></div>
+</div>
+<p>2. The next step is to create the plots. You can open the <cite>hw1_results.csv</cite> in
+software like Excel or write your own code to process the file and generate the
+required plots (see the assignment question on the description of what needs
+to be plotted).</p>
+<p>Please store the plots in the same directory (<cite>~/catkin_ws/src/hw1/scripts/</cite>).
+Name the plot files as <cite>task2.png</cite> and <cite>task3.png</cite> for Tasks 2 and 3
+respectively. While we do allow other file extensions, .png is the recommended
+format in which we prefer the plots.</p>
+<div class="section" id="submitting-your-homework">
+<h2>Submitting Your Homework<a class="headerlink" href="#submitting-your-homework" title="Permalink to this headline">¶</a></h2>
+<p>You now need to simply zip the <cite>~/catkin_ws/src/hw1/</cite> directory and upload it
+to Gradescope. The zip file should be named as &lt;first name&gt;_&lt;asu_id&gt;_hw1.zip.
+Upload your zip file on gradescope under Q11.</p>
+<div class="admonition warning">
+<p class="first admonition-title">Warning</p>
+<p>Please make sure that the zipped file contains hw1_results.csv, task1.png
+and task2.png. Also make sure that you have not renamed any file that was
+originally provided.</p>
+<p class="last">Do not create any new files since there will be no
+way for the autograder to know that it has to copy them over.</p>
+</div>
+</div>
+</div>
+<div class="section" id="tips-and-suggestions">
+<h1>Tips and Suggestions<a class="headerlink" href="#tips-and-suggestions" title="Permalink to this headline">¶</a></h1>
+<ol class="arabic simple">
+<li>The API section below contains all accessors required to complete this assignment.</li>
+<li>Test your algorithm with smaller grid or smaller number of obstacles to see if it works as expected.</li>
+<li>Since the obstacles and mazes are generated dynamically, sometimes it is possible that there is no path from initial state to goal state. If your algorithm returned empty action_list, check once if there is path from initial state to goal state.</li>
+<li>You need not start a new run to record running time if there is no path between initial state and goal state. The time taken for this case should also be considered while taking average of 5 runs.</li>
+<li>At times, the TurtleBot takes some time to perform an action, so wait for some time if no movement is visible.</li>
+<li>Check the slack channels to see if the problem you are facing is already answered. If not, start a new discussion.</li>
+</ol>
+<div class="section" id="hints-for-designing-the-extra-credit-heuristic">
+<h2>Hints for Designing the Extra Credit Heuristic<a class="headerlink" href="#hints-for-designing-the-extra-credit-heuristic" title="Permalink to this headline">¶</a></h2>
+<p>In the section <strong>Environment Description</strong>, you will find that action costs are
+different for different actions. Question 1 of the homework provides a hint
+that you can use in designing the heuristic.</p>
+<p>Remember the cost trade-off. Your heuristic must not be too expensive to compute.
+One extreme case is to run Breadth FS from a state and return the plan length from
+that state as the heuristic value. This gives you a very good estimate, since
+you run Breadth FS internally however the time to compute a single state’s
+heuristic value is quite large which makes it effectively useless since we could
+have just done a Breadth FS anyways. Doing BFS or any other of the implemented
+algorithms as the extra credit heuristic won’t get you extra credit!</p>
+</div>
+</div>
+<div class="section" id="api">
+<h1>API<a class="headerlink" href="#api" title="Permalink to this headline">¶</a></h1>
+<div class="section" id="class-state">
+<h2>class State<a class="headerlink" href="#class-state" title="Permalink to this headline">¶</a></h2>
+<dl class="class">
+<dt id="problem.State">
+<em class="property">class </em><code class="descclassname">problem.</code><code class="descname">State</code><span class="sig-paren">(</span><em>x</em>, <em>y</em>, <em>orientation</em><span class="sig-paren">)</span><a class="reference internal" href="_modules/problem.html#State"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#problem.State" title="Permalink to this definition">¶</a></dt>
+<dd><p>This class defines the state of the TurtleBot.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first last simple">
+<li><strong>x</strong> (<em>float</em>) – current x-cordinate of turtlebot</li>
+<li><strong>y</strong> (<em>float</em>) – current x-cordinate of turtlebot</li>
+<li><strong>orientation</strong> (<em>float</em>) – current orientation of turtlebot, can be either NORTH, SOUTH, EAST, WEST</li>
+</ul>
+</td>
+</tr>
+</tbody>
+</table>
+<dl class="method">
+<dt id="problem.State.get_orientation">
+<code class="descname">get_orientation</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="_modules/problem.html#State.get_orientation"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#problem.State.get_orientation" title="Permalink to this definition">¶</a></dt>
+<dd><table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Returns:</th><td class="field-body">The direction (orientation) of the state.</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Return type:</th><td class="field-body">int</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="method">
+<dt id="problem.State.get_x">
+<code class="descname">get_x</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="_modules/problem.html#State.get_x"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#problem.State.get_x" title="Permalink to this definition">¶</a></dt>
+<dd><table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Returns:</th><td class="field-body">The x-value of the state (-1 if the state is invalid).</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Return type:</th><td class="field-body">int</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="method">
+<dt id="problem.State.get_y">
+<code class="descname">get_y</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="_modules/problem.html#State.get_y"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#problem.State.get_y" title="Permalink to this definition">¶</a></dt>
+<dd><table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Returns:</th><td class="field-body">The y-value of the state (-1 if the state is invalid).</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Return type:</th><td class="field-body">int</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+</dd></dl>
+
+</div>
+<div class="section" id="class-node">
+<h2>class Node<a class="headerlink" href="#class-node" title="Permalink to this headline">¶</a></h2>
+<dl class="class">
+<dt id="node.Node">
+<em class="property">class </em><code class="descclassname">node.</code><code class="descname">Node</code><span class="sig-paren">(</span><em>state</em>, <em>parent</em>, <em>depth</em>, <em>action</em>, <em>action_cost</em><span class="sig-paren">)</span><a class="reference internal" href="_modules/node.html#Node"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#node.Node" title="Permalink to this definition">¶</a></dt>
+<dd><p>Initializes the node data structure of the search tree.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first simple">
+<li><strong>state</strong> (<a class="reference internal" href="#problem.State" title="problem.State"><em>State</em></a>) – The concrete state that this node represents.</li>
+<li><strong>parent</strong> (<a class="reference internal" href="#problem.State" title="problem.State"><em>State</em></a>) – The parent node of this node.</li>
+<li><strong>depth</strong> (<em>int</em>) – The depth of this node.</li>
+<li><strong>action</strong> (<em>Action</em>) – The action from the parent node’s state that lead to this
+node.</li>
+<li><strong>action_cost</strong> (<em>int</em>) – The cost of the specified action.</li>
+</ul>
+</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body"><p class="first"></p>
+</td>
+</tr>
+<tr class="field-odd field"><th class="field-name">Return type:</th><td class="field-body"><p class="first last">None</p>
+</td>
+</tr>
+</tbody>
+</table>
+<dl class="method">
+<dt id="node.Node.get_action">
+<code class="descname">get_action</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="_modules/node.html#Node.get_action"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#node.Node.get_action" title="Permalink to this definition">¶</a></dt>
+<dd><table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Returns:</th><td class="field-body">The action from the parent node’s concrete state that lead
+to this node’s concrete state.</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Return type:</th><td class="field-body">Action</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="method">
+<dt id="node.Node.get_action_cost">
+<code class="descname">get_action_cost</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="_modules/node.html#Node.get_action_cost"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#node.Node.get_action_cost" title="Permalink to this definition">¶</a></dt>
+<dd><table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Returns:</th><td class="field-body">The action cost of the action represented by this node.</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Return type:</th><td class="field-body">int</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="method">
+<dt id="node.Node.get_depth">
+<code class="descname">get_depth</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="_modules/node.html#Node.get_depth"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#node.Node.get_depth" title="Permalink to this definition">¶</a></dt>
+<dd><table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Returns:</th><td class="field-body">The depth of this node assuming unit-cost actions.</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Return type:</th><td class="field-body">int</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="method">
+<dt id="node.Node.get_parent">
+<code class="descname">get_parent</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="_modules/node.html#Node.get_parent"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#node.Node.get_parent" title="Permalink to this definition">¶</a></dt>
+<dd><table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Returns:</th><td class="field-body">The parent node of this node.</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Return type:</th><td class="field-body"><a class="reference internal" href="#node.Node" title="node.Node">Node</a></td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="method">
+<dt id="node.Node.get_state">
+<code class="descname">get_state</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="_modules/node.html#Node.get_state"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#node.Node.get_state" title="Permalink to this definition">¶</a></dt>
+<dd><table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Returns:</th><td class="field-body">The concrete state that this node represents.</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Return type:</th><td class="field-body"><a class="reference internal" href="#problem.State" title="problem.State">State</a></td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="method">
+<dt id="node.Node.get_total_action_cost">
+<code class="descname">get_total_action_cost</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="_modules/node.html#Node.get_total_action_cost"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#node.Node.get_total_action_cost" title="Permalink to this definition">¶</a></dt>
+<dd><table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Returns:</th><td class="field-body">The total cost to this node accounting for different action
+costs.</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Return type:</th><td class="field-body">int</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+</dd></dl>
+
+</div>
+</div>
+
+
+           </div>
+           
+          </div>
+          <footer>
+  
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+      
+      
+        <a href="index.html" class="btn btn-neutral float-left" title="Welcome to CSE 471 Fall 2020 - HW1!" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>
+      
+    </div>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+        
+        &copy; Copyright 2020, AAIR Lab, ASU
+
+    </p>
+  </div>
+    
+    
+    
+    Built with <a href="http://sphinx-doc.org/">Sphinx</a> using a
+    
+    <a href="https://github.com/rtfd/sphinx_rtd_theme">theme</a>
+    
+    provided by <a href="https://readthedocs.org">Read the Docs</a>. 
+
+</footer>
+
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  
+
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(false);
+      });
+  </script>
+
+  
+  
+    
+   
+
+</body>
+</html>

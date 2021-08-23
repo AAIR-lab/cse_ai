@@ -1,0 +1,390 @@
+
+
+<!DOCTYPE html>
+<html class="writer-html4" lang="en" >
+<head>
+  <meta charset="utf-8">
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <title>Homework 3 - Programming Section &mdash; CSE 471 - HW 3  documentation</title>
+  
+
+  
+  <link rel="stylesheet" href="_static/css/theme.css" type="text/css" />
+  <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
+
+  
+  
+  
+  
+
+  
+  <!--[if lt IE 9]>
+    <script src="_static/js/html5shiv.min.js"></script>
+  <![endif]-->
+  
+    
+      <script type="text/javascript" id="documentation_options" data-url_root="./" src="_static/documentation_options.js"></script>
+        <script type="text/javascript" src="_static/jquery.js"></script>
+        <script type="text/javascript" src="_static/underscore.js"></script>
+        <script type="text/javascript" src="_static/doctools.js"></script>
+        <script type="text/javascript" src="_static/language_data.js"></script>
+    
+    <script type="text/javascript" src="_static/js/theme.js"></script>
+
+    
+    <link rel="index" title="Index" href="genindex.html" />
+    <link rel="search" title="Search" href="search.html" />
+    <link rel="prev" title="Welcome to CSE 471 Fall 2020 - HW3!" href="index.html" /> 
+</head>
+
+<body class="wy-body-for-nav">
+
+   
+  <div class="wy-grid-for-nav">
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+          
+
+          
+            <a href="index.html" class="icon icon-home" alt="Documentation Home"> CSE 471 - HW 3
+          
+
+          
+          </a>
+
+          
+
+          
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+
+          
+        </div>
+
+        
+        <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+          
+            
+            
+              
+            
+            
+              <p class="caption"><span class="caption-text">Contents:</span></p>
+<ul class="current">
+<li class="toctree-l1 current"><a class="current reference internal" href="#">Homework 3 - Programming Section</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="#extra-credit">Extra Credit</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#late-submission-policy">Late Submission Policy</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="#instructions">Instructions</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="#setting-up-reinforcement-folder">Setting up <strong>Reinforcement</strong> Folder</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#environment-setting">Environment Setting</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#basic-setup">Basic setup</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#task-1a">Task 1a</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#task-1b">Task 1b</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#task-2a">Task 2a</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#task-2b">Task 2b</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#submission-instructions">Submission Instructions</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#tips-and-suggestions">Tips and Suggestions</a></li>
+</ul>
+</li>
+</ul>
+
+            
+          
+        </div>
+        
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" aria-label="top navigation">
+        
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="index.html">CSE 471 - HW 3</a>
+        
+      </nav>
+
+
+      <div class="wy-nav-content">
+        
+        <div class="rst-content">
+        
+          
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div role="navigation" aria-label="breadcrumbs navigation">
+
+  <ul class="wy-breadcrumbs">
+    
+      <li><a href="index.html" class="icon icon-home"></a> &raquo;</li>
+        
+      <li>Homework 3 - Programming Section</li>
+    
+    
+      <li class="wy-breadcrumbs-aside">
+        
+            
+        
+      </li>
+    
+  </ul>
+
+  
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+            
+  <div class="section" id="homework-3-programming-section">
+<h1>Homework 3 - Programming Section<a class="headerlink" href="#homework-3-programming-section" title="Permalink to this headline">¶</a></h1>
+<p>Welcome to the programming section of Homework 3 for CSE 471 - Fall 2020.</p>
+<p>This section will test your understanding of Reinforcement Learning as covered in the class.</p>
+<p>Please check gradescope for the due dates. Please plan your submission early to avoid last moment hiccups.
+The programming assignment is purely extra credit.</p>
+<div class="section" id="extra-credit">
+<h2>Extra Credit<a class="headerlink" href="#extra-credit" title="Permalink to this headline">¶</a></h2>
+<p>1a. [8 points] Complete get_q_value() in hw3_task.py using Q-learning to compute the Q-value.</p>
+<p>1b. [2 points] Run the program with the q-value computed above and lot the resulting episode vs. reward plots.</p>
+<p>2a. [8 points] Compute a decayed value for epsilon by completing the code for epsilon_task == 2 in get_epsilon() found in hw3_task.py. The decay routine should reduce the current epsilon value by 1%. The minimum value that the function returns must be 0.01.</p>
+<p>2b. [2 points] Run the program with the q-value and decayed epsilon value computed and plot the resulting episode vs. reward plots.</p>
+<p>Please refer to <a class="reference external" href="#instructions">instructions section</a> to understand what these tasks mean and how to setup the environment. It also includes a number of tips that will significantly simplify your task. Follow the instructions strictly to ensure that your assignment can be graded by the auto-grader. <strong>Custom grading requests will not be entertained</strong>.</p>
+</div>
+<div class="section" id="late-submission-policy">
+<h2>Late Submission Policy<a class="headerlink" href="#late-submission-policy" title="Permalink to this headline">¶</a></h2>
+<ol class="arabic simple">
+<li>Please refer to Gradescope for the late submission policy.</li>
+</ol>
+</div>
+</div>
+<div class="section" id="instructions">
+<h1>Instructions<a class="headerlink" href="#instructions" title="Permalink to this headline">¶</a></h1>
+<div class="section" id="setting-up-reinforcement-folder">
+<h2>Setting up <strong>Reinforcement</strong> Folder<a class="headerlink" href="#setting-up-reinforcement-folder" title="Permalink to this headline">¶</a></h2>
+<p>We assume that you have completed the setup as instructed in Homework 0.</p>
+<ol class="arabic">
+<li><p class="first">Unzip the downloaded .zip to ~/catkin_ws/src/</p>
+</li>
+<li><p class="first">Change permission of all scripts to executable and install pip.</p>
+<blockquote>
+<div><div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>chmod u+x ~/catkin_ws/src/reinforcement/scripts/*.py
+sudo apt install python-pip
+</pre></div>
+</div>
+</div></blockquote>
+</li>
+<li><p class="first">Execute the env_setup.sh script. It will copy the necessaty files in respective folders. This script will fail if you don’t have turtlebot folder in ~/catkin_ws/src. Refer Homework 0 setup if this is the case.</p>
+<blockquote>
+<div><div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>chmod u+x ~/catkin_ws/src/reinforcement/env_setup.sh <span class="o">&amp;&amp;</span> ~/catkin_ws/src/reinforcement/env_setup.sh <span class="o">&amp;&amp;</span> pip install tqdm
+</pre></div>
+</div>
+</div></blockquote>
+</li>
+</ol>
+</div>
+<div class="section" id="environment-setting">
+<h2>Environment Setting<a class="headerlink" href="#environment-setting" title="Permalink to this headline">¶</a></h2>
+<p>Refer the image below to see how a sample maze environment looks like. The turtleBot has a basket on top of it. There are books of 2 different sizes (large and small) and 2 different subjects lying around on the maze. There are 4 destination bins, 2 of each subject. Each subject has bins of 2 sizes, large and small. Each book has a designated bin, depending on its size and subject.</p>
+<div class="figure">
+<a class="reference internal image-reference" href="_images/books_n_bins.png"><img alt="A sample maze" src="_images/books_n_bins.png" style="width: 737.6px; height: 419.6px;" /></a>
+</div>
+<p>Some of the terms that we use throughout the assignment are:</p>
+<ol class="arabic simple">
+<li>Book and Bin Size: There are two sizes for the books and bins. Large and Small.</li>
+<li>Number of Subjects: This is the number of distinct subjects. This number can vary between 1 and 3 inclusive. For each of the subject, two different bins will be generated; large and small.</li>
+<li>Number of Books: This is the number of books you have of each subject in each size. This number can vary between 1 and 3 inclusive. So actual number of books in the whole environment is number of books * number of subjects * 2.</li>
+<li>Load Location: Every book and bin has 2 load locations. For a book it is the set of locations from where it can be picked by the TurtleBot. For a bin it is the set of locations from where the TurtleBot can place the books into this bin.</li>
+<li>Grid Size: Grid Size is not used explicitly in this homework. It is dependent on the number of books. For this homework, Grid Size = 6 * number of subjects.</li>
+</ol>
+</div>
+<div class="section" id="basic-setup">
+<h2>Basic setup<a class="headerlink" href="#basic-setup" title="Permalink to this headline">¶</a></h2>
+<ol class="arabic">
+<li><p class="first">Run the following to see basic help commands.</p>
+<blockquote>
+<div><div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>rosrun reinforcement qlearning.py -h
+usage: qlearning.py <span class="o">[</span>-h<span class="o">]</span> <span class="o">[</span>--subjects SUBJECTS<span class="o">]</span> <span class="o">[</span>--books BOOKS<span class="o">]</span> <span class="o">[</span>--seed SEED<span class="o">]</span>
+                    <span class="o">[</span>--alpha ALPHA<span class="o">]</span> <span class="o">[</span>--gamma GAMMA<span class="o">]</span> <span class="o">[</span>--episodes EPISODES<span class="o">]</span>
+                    <span class="o">[</span>--max-steps MAX_STEPS<span class="o">]</span> <span class="o">[</span>--epsilon-task EPSILON_TASK<span class="o">]</span>
+                    <span class="o">[</span>--file-name FILE_NAME<span class="o">]</span>
+
+optional arguments:
+  -h, --help            show this <span class="nb">help</span> message and <span class="nb">exit</span>
+  --subjects SUBJECTS   No of book subjects.
+  --books BOOKS         The number of books in the grid.
+  --seed SEED           The random seed.
+  --alpha ALPHA         The learning rate.
+  --gamma GAMMA         The discount factor.
+  --episodes EPISODES   The total number of episodes.
+  --max-steps MAX_STEPS
+                        The max. steps per episode.
+  --epsilon-task EPSILON_TASK
+                        The epsilon task to use.
+  --file-name FILE_NAME
+                        Store results in &lt;file&gt; in the project root directory.
+</pre></div>
+</div>
+</div></blockquote>
+</li>
+</ol>
+</div>
+<div class="section" id="task-1a">
+<h2>Task 1a<a class="headerlink" href="#task-1a" title="Permalink to this headline">¶</a></h2>
+<ol class="arabic simple">
+<li>Complete get_q_value() in hw3_task.py. The computation must use the Q-learning update rules.</li>
+<li>You can use test_q_values.csv in the root directory to validate whether your implementation is correct. It contains the expected value for several different combinations of arguments to the function (rounded off to 2 decimal places).</li>
+</ol>
+</div>
+<div class="section" id="task-1b">
+<h2>Task 1b<a class="headerlink" href="#task-1b" title="Permalink to this headline">¶</a></h2>
+<ol class="arabic">
+<li><p class="first">Run the following instructions to generate the required submission files.</p>
+<blockquote>
+<div><div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>rosrun reinforcement qlearning.py --subjects <span class="m">1</span> <span class="se">\</span>
+    --books <span class="m">1</span> <span class="se">\</span>
+    --seed <span class="m">32</span> <span class="se">\</span>
+    --episodes <span class="m">500</span> <span class="se">\</span>
+    --max-steps <span class="m">500</span> <span class="se">\</span>
+    --epsilon-task <span class="m">1</span> <span class="se">\</span>
+    --file-name task_1b.csv
+</pre></div>
+</div>
+</div></blockquote>
+</li>
+<li><p class="first">This will create a file called task_1b.csv in the reinforcement directory</p>
+</li>
+<li><p class="first">Using task_1b.csv create a plot of episodes (x-axis) vs. cumulative reward.</p>
+</li>
+<li><p class="first">Please name your plot as task_1b.png (Note that it must be in PNG format).</p>
+</li>
+</ol>
+</div>
+<div class="section" id="task-2a">
+<h2>Task 2a<a class="headerlink" href="#task-2a" title="Permalink to this headline">¶</a></h2>
+<ol class="arabic simple">
+<li>Complete the code-block section for get_epsilon() that handles the case for epsilon_task==2.</li>
+<li>You can assume that epsilon values are rounded off to 2 decimal places.</li>
+<li>You need to decay the current value of epsilon by 1% (the minimum value returned should be 0.01).</li>
+<li>You can use test_epsilon_task_2.csv in the root directory to validate whether your implementation is correct. It contains the expected value for several different values of the current value of epsilon.</li>
+</ol>
+</div>
+<div class="section" id="task-2b">
+<h2>Task 2b<a class="headerlink" href="#task-2b" title="Permalink to this headline">¶</a></h2>
+<ol class="arabic">
+<li><p class="first">Run the following instructions to generate the required submission files.</p>
+<blockquote>
+<div><div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>rosrun reinforcement qlearning.py --subjects <span class="m">1</span> <span class="se">\</span>
+    --books <span class="m">1</span> <span class="se">\</span>
+    --seed <span class="m">32</span> <span class="se">\</span>
+    --episodes <span class="m">500</span> <span class="se">\</span>
+    --max-steps <span class="m">500</span> <span class="se">\</span>
+    --epsilon-task <span class="m">2</span> <span class="se">\</span>
+    --file-name task_2b.csv
+</pre></div>
+</div>
+</div></blockquote>
+</li>
+<li><p class="first">This will create a file called task_2b.csv in the reinforcement directory</p>
+</li>
+<li><p class="first">Using task_2b.csv create a plot of episodes (x-axis) vs. cumulative reward.</p>
+</li>
+<li><p class="first">Please name your plot as task_2b.png (Note that it must be in PNG format).</p>
+</li>
+</ol>
+</div>
+<div class="section" id="submission-instructions">
+<h2>Submission Instructions<a class="headerlink" href="#submission-instructions" title="Permalink to this headline">¶</a></h2>
+<ol class="arabic simple">
+<li>Zip up hw3_task.py, task_1b.{csv,png} and task_2b.{csv,png} in a file called lastname_firstname_asu#.zip</li>
+<li>Submit this zip file to Gradescope under Question 7.1</li>
+</ol>
+</div>
+<div class="section" id="tips-and-suggestions">
+<h2>Tips and Suggestions<a class="headerlink" href="#tips-and-suggestions" title="Permalink to this headline">¶</a></h2>
+<ol class="arabic simple">
+<li>You only need look at hw3_task.py (and the slides) to finish this task!</li>
+<li>The provided validator files can help you verify your solution. Note however that some corner cases could be missing.</li>
+<li>It does take a fair bit of time to run 500 episodes so plan on finishing it well before the deadline.</li>
+</ol>
+</div>
+</div>
+
+
+           </div>
+           
+          </div>
+          <footer>
+  
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+      
+      
+        <a href="index.html" class="btn btn-neutral float-left" title="Welcome to CSE 471 Fall 2020 - HW3!" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>
+      
+    </div>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+        
+        &copy; Copyright 2020, AAIR Lab, ASU
+
+    </p>
+  </div>
+    
+    
+    
+    Built with <a href="http://sphinx-doc.org/">Sphinx</a> using a
+    
+    <a href="https://github.com/rtfd/sphinx_rtd_theme">theme</a>
+    
+    provided by <a href="https://readthedocs.org">Read the Docs</a>. 
+
+</footer>
+
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  
+
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(false);
+      });
+  </script>
+
+  
+  
+    
+   
+
+</body>
+</html>

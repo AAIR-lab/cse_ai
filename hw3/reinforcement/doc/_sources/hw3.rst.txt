@@ -1,0 +1,174 @@
+Homework 3 - Programming Section
+==================================
+
+Welcome to the programming section of Homework 3 for CSE 471 - Fall 2020.
+
+This section will test your understanding of Reinforcement Learning as covered in the class.
+
+Please check gradescope for the due dates. Please plan your submission early to avoid last moment hiccups.
+The programming assignment is purely extra credit.
+
+=================
+Extra Credit
+=================
+1a. [8 points] Complete get_q_value() in hw3_task.py using Q-learning to compute the Q-value.
+
+1b. [2 points] Run the program with the q-value computed above and lot the resulting episode vs. reward plots.
+
+2a. [8 points] Compute a decayed value for epsilon by completing the code for epsilon_task == 2 in get_epsilon() found in hw3_task.py. The decay routine should reduce the current epsilon value by 1%. The minimum value that the function returns must be 0.01.
+    
+2b. [2 points] Run the program with the q-value and decayed epsilon value computed and plot the resulting episode vs. reward plots.
+
+Please refer to `instructions section <#instructions>`_ to understand what these tasks mean and how to setup the environment. It also includes a number of tips that will significantly simplify your task. Follow the instructions strictly to ensure that your assignment can be graded by the auto-grader. **Custom grading requests will not be entertained**.
+
+=============================
+Late Submission Policy
+=============================
+
+#. Please refer to Gradescope for the late submission policy.
+
+Instructions
+=================
+
+===================================
+Setting up **Reinforcement** Folder
+===================================
+We assume that you have completed the setup as instructed in Homework 0.
+
+#. Unzip the downloaded .zip to ~/catkin_ws/src/
+
+#. Change permission of all scripts to executable and install pip.
+
+    .. code-block:: bash
+    
+       chmod u+x ~/catkin_ws/src/reinforcement/scripts/*.py
+       sudo apt install python-pip
+
+#. Execute the env_setup.sh script. It will copy the necessaty files in respective folders. This script will fail if you don't have turtlebot folder in ~/catkin_ws/src. Refer Homework 0 setup if this is the case.
+
+    .. code-block:: bash
+
+       chmod u+x ~/catkin_ws/src/reinforcement/env_setup.sh && ~/catkin_ws/src/reinforcement/env_setup.sh && pip install tqdm
+
+=============================
+Environment Setting
+=============================
+
+Refer the image below to see how a sample maze environment looks like. The turtleBot has a basket on top of it. There are books of 2 different sizes (large and small) and 2 different subjects lying around on the maze. There are 4 destination bins, 2 of each subject. Each subject has bins of 2 sizes, large and small. Each book has a designated bin, depending on its size and subject.
+
+.. figure:: ./images/books_n_bins.png
+        :scale: 40 %
+        :alt: A sample maze
+
+Some of the terms that we use throughout the assignment are:
+
+#. Book and Bin Size: There are two sizes for the books and bins. Large and Small.
+
+#. Number of Subjects: This is the number of distinct subjects. This number can vary between 1 and 3 inclusive. For each of the subject, two different bins will be generated; large and small. 
+
+#. Number of Books: This is the number of books you have of each subject in each size. This number can vary between 1 and 3 inclusive. So actual number of books in the whole environment is number of books * number of subjects * 2.
+
+#. Load Location: Every book and bin has 2 load locations. For a book it is the set of locations from where it can be picked by the TurtleBot. For a bin it is the set of locations from where the TurtleBot can place the books into this bin.
+
+#. Grid Size: Grid Size is not used explicitly in this homework. It is dependent on the number of books. For this homework, Grid Size = 6 * number of subjects.
+
+=============================
+Basic setup
+=============================
+
+#. Run the following to see basic help commands.
+
+    .. code-block:: bash
+
+        rosrun reinforcement qlearning.py -h
+        usage: qlearning.py [-h] [--subjects SUBJECTS] [--books BOOKS] [--seed SEED]
+                            [--alpha ALPHA] [--gamma GAMMA] [--episodes EPISODES]
+                            [--max-steps MAX_STEPS] [--epsilon-task EPSILON_TASK]
+                            [--file-name FILE_NAME]
+
+        optional arguments:
+          -h, --help            show this help message and exit
+          --subjects SUBJECTS   No of book subjects.
+          --books BOOKS         The number of books in the grid.
+          --seed SEED           The random seed.
+          --alpha ALPHA         The learning rate.
+          --gamma GAMMA         The discount factor.
+          --episodes EPISODES   The total number of episodes.
+          --max-steps MAX_STEPS
+                                The max. steps per episode.
+          --epsilon-task EPSILON_TASK
+                                The epsilon task to use.
+          --file-name FILE_NAME
+                                Store results in <file> in the project root directory.
+
+=============================
+Task 1a
+=============================
+
+#. Complete get_q_value() in hw3_task.py. The computation must use the Q-learning update rules.
+
+#. You can use test_q_values.csv in the root directory to validate whether your implementation is correct. It contains the expected value for several different combinations of arguments to the function (rounded off to 2 decimal places).
+
+=============================
+Task 1b
+=============================
+
+#. Run the following instructions to generate the required submission files.
+    
+    .. code-block:: bash
+    
+        rosrun reinforcement qlearning.py --subjects 1 \
+            --books 1 \
+            --seed 32 \
+            --episodes 500 \
+            --max-steps 500 \
+            --epsilon-task 1 \
+            --file-name task_1b.csv
+
+#. This will create a file called task_1b.csv in the reinforcement directory
+#. Using task_1b.csv create a plot of episodes (x-axis) vs. cumulative reward.
+#. Please name your plot as task_1b.png (Note that it must be in PNG format).
+
+=============================
+Task 2a
+=============================
+
+#. Complete the code-block section for get_epsilon() that handles the case for epsilon_task==2.
+#. You can assume that epsilon values are rounded off to 2 decimal places.
+#. You need to decay the current value of epsilon by 1% (the minimum value returned should be 0.01).
+#. You can use test_epsilon_task_2.csv in the root directory to validate whether your implementation is correct. It contains the expected value for several different values of the current value of epsilon.
+
+=============================
+Task 2b
+=============================
+
+#. Run the following instructions to generate the required submission files.
+
+    .. code-block:: bash
+
+        rosrun reinforcement qlearning.py --subjects 1 \
+            --books 1 \
+            --seed 32 \
+            --episodes 500 \
+            --max-steps 500 \
+            --epsilon-task 2 \
+            --file-name task_2b.csv
+
+#. This will create a file called task_2b.csv in the reinforcement directory
+#. Using task_2b.csv create a plot of episodes (x-axis) vs. cumulative reward.
+#. Please name your plot as task_2b.png (Note that it must be in PNG format).
+
+========================
+Submission Instructions
+========================
+#. Zip up hw3_task.py, task_1b.{csv,png} and task_2b.{csv,png} in a file called lastname_firstname_asu#.zip
+#. Submit this zip file to Gradescope under Question 7.1
+
+=============================
+Tips and Suggestions
+=============================
+
+#. You only need look at hw3_task.py (and the slides) to finish this task!
+#. The provided validator files can help you verify your solution. Note however that some corner cases could be missing.
+#. It does take a fair bit of time to run 500 episodes so plan on finishing it well before the deadline.
+

@@ -1,0 +1,701 @@
+
+
+<!DOCTYPE html>
+<html class="writer-html5" lang="en" >
+<head>
+  <meta charset="utf-8">
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <title>Homework 2 - Programming Section &mdash; CSE 571 - HW 2  documentation</title>
+  
+
+  
+  <link rel="stylesheet" href="_static/css/theme.css" type="text/css" />
+  <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
+
+  
+  
+  
+  
+
+  
+  <!--[if lt IE 9]>
+    <script src="_static/js/html5shiv.min.js"></script>
+  <![endif]-->
+  
+    
+      <script type="text/javascript" id="documentation_options" data-url_root="./" src="_static/documentation_options.js"></script>
+        <script src="_static/jquery.js"></script>
+        <script src="_static/underscore.js"></script>
+        <script src="_static/doctools.js"></script>
+        <script src="_static/language_data.js"></script>
+    
+    <script type="text/javascript" src="_static/js/theme.js"></script>
+
+    
+    <link rel="index" title="Index" href="genindex.html" />
+    <link rel="search" title="Search" href="search.html" />
+    <link rel="prev" title="Welcome to CSE 471 Fall 2020 - HW2!" href="index.html" /> 
+</head>
+
+<body class="wy-body-for-nav">
+
+   
+  <div class="wy-grid-for-nav">
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+          
+
+          
+            <a href="index.html" class="icon icon-home" alt="Documentation Home"> CSE 571 - HW 2
+          
+
+          
+          </a>
+
+          
+
+          
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+
+          
+        </div>
+
+        
+        <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+          
+            
+            
+              
+            
+            
+              <p class="caption"><span class="caption-text">Contents:</span></p>
+<ul class="current">
+<li class="toctree-l1 current"><a class="current reference internal" href="#">Homework 2 - Programming Section</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="#plagiarism-warning">Plagiarism Warning</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#tasks">Tasks</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#extra-credit">Extra Credit</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#grading-policy">Grading Policy</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="#instructions">Instructions</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="#setting-up-the-hw2-folder">Setting up the <strong>hw2</strong> Folder</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#environment-setting">Environment Setting</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#completing-domain-pddl">Completing domain.pddl</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#predicates">Predicates</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#actions">Actions</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="#completing-problem-pddl">Completing problem.pddl</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#checking-correctness-of-pddl-files">Checking correctness of pddl files</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#fast-downward">Fast Downward</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="#generating-refinements">Generating Refinements</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#running-gazebo">Running Gazebo</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#submission-instructions">Submission Instructions</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#testing-the-refinements">Testing the refinements</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#tips-and-suggestions">Tips and Suggestions</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#resources">Resources</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="#api">API</a></li>
+</ul>
+
+            
+          
+        </div>
+        
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" aria-label="top navigation">
+        
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="index.html">CSE 571 - HW 2</a>
+        
+      </nav>
+
+
+      <div class="wy-nav-content">
+        
+        <div class="rst-content">
+        
+          
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div role="navigation" aria-label="breadcrumbs navigation">
+
+  <ul class="wy-breadcrumbs">
+    
+      <li><a href="index.html" class="icon icon-home"></a> &raquo;</li>
+        
+      <li>Homework 2 - Programming Section</li>
+    
+    
+      <li class="wy-breadcrumbs-aside">
+        
+            
+        
+      </li>
+    
+  </ul>
+
+  
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+            
+  <div class="section" id="homework-2-programming-section">
+<h1>Homework 2 - Programming Section<a class="headerlink" href="#homework-2-programming-section" title="Permalink to this headline">¶</a></h1>
+<p>Welcome to Programming section of Homework 2 for CSE 471 - Fall 2020.</p>
+<p>This section will test your understanding of Planning as covered in the class.</p>
+<div class="section" id="plagiarism-warning">
+<h2>Plagiarism Warning<a class="headerlink" href="#plagiarism-warning" title="Permalink to this headline">¶</a></h2>
+<p>Powerful copy-detection systems will be used as part of grading, so please <strong>DO NOT</strong> submit/use any piece of code that is not <strong>your own</strong> work. These systems can easily catch instances where users change variable names, etc. from copied code.</p>
+<p>If you use any helper code, do not forget to cite it using comments inside the code.</p>
+<p>If you are stuck at any point, you can approach the professor or TA for help.</p>
+<p>As mentioned in class, please remember the academic integrity policy of this course.</p>
+<div class="figure align-default">
+<a class="reference internal image-reference" href="_images/plagiarism.png"><img alt="Academic Integrity Policy" src="_images/plagiarism.png" style="width: 792.0px; height: 326.5px;" /></a>
+</div>
+</div>
+<div class="section" id="tasks">
+<h2>Tasks<a class="headerlink" href="#tasks" title="Permalink to this headline">¶</a></h2>
+<ol class="arabic simple">
+<li><p>[30 points] Complete the domain.pddl by completing the pick and move actions.</p></li>
+<li><p>[30 points] Complete the problem.pddl by writing the correct problem independent goal.</p></li>
+</ol>
+</div>
+<div class="section" id="extra-credit">
+<h2>Extra Credit<a class="headerlink" href="#extra-credit" title="Permalink to this headline">¶</a></h2>
+<ol class="arabic simple">
+<li><p>[5 points] Send a video of Gazebo executing the task successfully. The robot must pick and place at least 4 books.</p></li>
+<li><p>[10 points] Improve the quality of the high-level plans and refinements by  utilizing a different high-level planner (FF/different mode of FD) as well as changing the low-level search algorithm. You will be eligible for extra credit if the refinement is correct and the # of actions performed by the robot (in the low-level plan) is less than the solution that we have on file using the default configuration of the high-level planner and low-level search that is provided to you.</p></li>
+<li><p>[10 points] Use universal and existential quantifiers to write the goal formula.</p></li>
+</ol>
+<p>Please refer to <a class="reference external" href="#instructions">instructions section</a> to understand what these tasks mean and how to setup the environment. It also includes a number of tips that will significantly simplify your task. Follow the instructions strictly to ensure that your assignment can be graded by the auto-grader. <strong>Custom grading requests will not be entertained</strong>.</p>
+</div>
+<div class="section" id="grading-policy">
+<h2>Grading Policy<a class="headerlink" href="#grading-policy" title="Permalink to this headline">¶</a></h2>
+<ol class="arabic simple">
+<li><p>A submission is considered late the moment the deadline has elapsed.</p></li>
+<li><p>We will deduct 3% of your grade for every hour submitted late upto a maximum 24 hours.</p></li>
+<li><p>No points will be given if the assignment is submitted later than 24 hours.</p></li>
+<li><p>In order to get full points for Task 1, your goal should be independent of the number of objects in the environment.</p></li>
+<li><p>In order to get full points for Task 2, all the action descriptions should be correct. No partial points will be awarded if not all actions are right.</p></li>
+<li><p>Your final submitted code should run without any input or configuration from the graders. If any changes are required to get your submitted code to run, points will be deducted in a manner proportional to the number of changes needed. If you follow the instructions your code will run without any inputs from the graders.</p></li>
+<li><p>Homework will be graded on Ubuntu 18.04 machines setup with ROS Melodic, and Python 2.7. Use the setup from HW0 to ensure your code runs as intended with this configuration.</p></li>
+</ol>
+</div>
+</div>
+<div class="section" id="instructions">
+<h1>Instructions<a class="headerlink" href="#instructions" title="Permalink to this headline">¶</a></h1>
+<div class="section" id="setting-up-the-hw2-folder">
+<h2>Setting up the <strong>hw2</strong> Folder<a class="headerlink" href="#setting-up-the-hw2-folder" title="Permalink to this headline">¶</a></h2>
+<p>We assume that you have completed the setup as instructed in Homework 0 and have
+downloaded and unzipped the file to the ~/catkin_ws/src folder.</p>
+<ol class="arabic">
+<li><p>Change permission of all scripts in the hw2 folder to make them executable.</p>
+<blockquote>
+<div><div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>chmod u+x ~/catkin_ws/src/hw2/scripts/*.py
+</pre></div>
+</div>
+</div></blockquote>
+</li>
+<li><p>Execute the env_setup.sh script. It will copy the necessaty files in respective folders. This script will fail if you don’t have turtlebot folder in ~/catkin_ws/src. Refer Homework 0 setup if this is the case.</p>
+<blockquote>
+<div><div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>chmod u+x ~/catkin_ws/src/hw2/env_setup.sh <span class="o">&amp;&amp;</span> ~/catkin_ws/src/hw2/env_setup.sh
+</pre></div>
+</div>
+</div></blockquote>
+</li>
+</ol>
+</div>
+<div class="section" id="environment-setting">
+<h2>Environment Setting<a class="headerlink" href="#environment-setting" title="Permalink to this headline">¶</a></h2>
+<p>Refer the image below to see how a sample maze environment looks like. The turtleBot has a basket on top of it. There are books of 2 different sizes (large and small) and 2 different subjects lying around on the maze. There are 4 destination bins, 2 of each subject. Each subject has bins of 2 sizes, large and small. Each book has a designated bin, depending on its size and subject.</p>
+<div class="figure align-default">
+<a class="reference internal image-reference" href="_images/books_n_bins.png"><img alt="A sample maze" src="_images/books_n_bins.png" style="width: 737.6px; height: 419.6px;" /></a>
+</div>
+<p>Some of the terms that we use throughout the assignment are:</p>
+<ol class="arabic simple">
+<li><p>Book and Bin Size: There are two sizes for the books and bins. Large and Small.</p></li>
+<li><p>Number of Subjects: This is the number of distinct subjects. This number can vary between 1 and 3 inclusive. For each of the subject, two different bins will be generated; large and small.</p></li>
+<li><p>Number of Books: This is the number of books you have of each subject in each size. This number can vary between 1 and 3 inclusive. So actual number of books in the whole environment is number of books * number of subjects * 2.</p></li>
+<li><p>Load Location: Every book and bin has 2 load locations. For a book it is the set of locations from where it can be picked by the TurtleBot. For a bin it is the set of locations from where the TurtleBot can place the books into this bin.</p></li>
+</ol>
+<div class="admonition warning">
+<p class="admonition-title">Warning</p>
+<p>We gave multiple load locations because it is possible that one of the book’s load location is obstructed by another book. Same can also happen for a bin. In such a case the TurtleBot can go to the another load location and perform the pick or place operation so that it can clear the path.</p>
+<p><strong>It is possible that both the load locations of a book or bin are obstructed.</strong> In such a case no solution exists, and you have to regenerate a new problem. Reducing the # of books avoids this problem.</p>
+</div>
+<ol class="arabic">
+<li><p>Grid Size: Grid Size is not used explicitly in this homework. It is dependent on the number of books. For this homework, Grid Size = 6 * number of subjects.</p>
+<blockquote>
+<div><div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>In contrast to the previous homework, the actual grid size used for navigation is the same as what is seen in the Gazebo environment.</p>
+<table class="docutils align-default">
+<colgroup>
+<col style="width: 100%" />
+</colgroup>
+<tbody>
+<tr class="row-odd"><td><div class="figure align-default" id="id1">
+<img alt="_images/grid.png" src="_images/grid.png" />
+<p class="caption"><span class="caption-text">Fig 1. Grid visible in Gazebo</span><a class="headerlink" href="#id1" title="Permalink to this image">¶</a></p>
+</div>
+</td>
+</tr>
+</tbody>
+</table>
+<p>Hence, if you have to go from point A to B in Gazebo environment using ‘MoveF’ action, you will have to give ‘MoveF’ command only once.</p>
+</div>
+</div></blockquote>
+</li>
+</ol>
+</div>
+<div class="section" id="completing-domain-pddl">
+<h2>Completing domain.pddl<a class="headerlink" href="#completing-domain-pddl" title="Permalink to this headline">¶</a></h2>
+<p>The domain.pddl file provided to you (located at ~/catkin_ws/src/hw2/) looks like this:</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span><span class="o">(</span>define <span class="o">(</span>domain bookWorld<span class="o">)</span>
+
+    <span class="o">(</span>:requirements :equality :typing :strips<span class="o">)</span>
+
+    <span class="o">(</span>:types robot book bin location subject size<span class="o">)</span>
+
+    <span class="o">(</span>:predicates
+        <span class="o">(</span>Book_At ?a - book ?b - location<span class="o">)</span>
+        <span class="o">(</span>Bin_At ?a - bin ?b - location<span class="o">)</span>
+        <span class="o">(</span>Book_Subject ?a - book ?b - subject<span class="o">)</span>
+        <span class="o">(</span>Book_Size ?a - book ?b - size<span class="o">)</span>
+        <span class="o">(</span>Bin_Subject ?a - bin ?b - subject<span class="o">)</span>
+        <span class="o">(</span>Bin_Size ?a - bin ?b - size<span class="o">)</span>
+        <span class="o">(</span>Robot_At ?a - robot ?b - location<span class="o">)</span>
+        <span class="o">(</span>Empty_Basket ?a - robot<span class="o">)</span>
+        <span class="o">(</span>In_Basket ?b - book<span class="o">)</span>
+    <span class="o">)</span>
+
+    <span class="p">;</span> Pick up a book from the location.
+    <span class="o">(</span>:action pick
+        :parameters <span class="o">(</span>?book - book ?bot - robot ?locbk - location<span class="o">)</span>
+        :precondition <span class="o">(</span>and
+                <span class="p">;</span> ADD ALL PRECONDITIONS HERE
+            <span class="o">)</span>
+        :effect <span class="o">(</span>and
+                <span class="p">;</span> ADD ALL EFFECTS HERE
+            <span class="o">)</span>
+    <span class="o">)</span>
+
+    <span class="p">;</span> Place the book on the robot into the bin.
+    <span class="p">;</span> The robot must be at the drop-off location, must be holding the book, and
+    <span class="p">;</span> the book subject and size must match that of the book.
+    <span class="o">(</span>:action place
+        :parameters <span class="o">(</span>?book - book ?bot - robot ?locbt - location ?bin - bin ?locbn - location ?sizebn - size ?subbn - subject<span class="o">)</span>
+        :precondition <span class="o">(</span>and
+            <span class="o">(</span>Robot_At ?bot ?locbn<span class="o">)</span>
+            <span class="o">(</span>not <span class="o">(</span>Empty_Basket ?bot<span class="o">))</span>
+
+            <span class="o">(</span>Book_Size ?book ?sizebn<span class="o">)</span>
+            <span class="o">(</span>In_Basket ?book<span class="o">)</span>
+            <span class="o">(</span>Book_Subject ?book ?subbn<span class="o">)</span>
+
+            <span class="o">(</span>Bin_Size ?bin ?sizebn<span class="o">)</span>
+            <span class="o">(</span>Bin_At ?bin ?locbn<span class="o">)</span>
+            <span class="o">(</span>Bin_Subject ?bin ?subbn<span class="o">)</span>
+        <span class="o">)</span>
+        :effect <span class="o">(</span>and
+            <span class="o">(</span>Robot_At ?bot ?locbn<span class="o">)</span>
+            <span class="o">(</span>Empty_Basket ?bot<span class="o">)</span>
+            <span class="o">(</span>not <span class="o">(</span>In_Basket ?book<span class="o">))</span>
+
+            <span class="o">(</span>Book_Size ?book ?sizebn<span class="o">)</span>
+            <span class="o">(</span>Book_At ?book ?locbn<span class="o">)</span>
+            <span class="o">(</span>Book_Subject ?book ?subbn<span class="o">)</span>
+
+            <span class="o">(</span>Bin_Size ?bin ?sizebn<span class="o">)</span>
+            <span class="o">(</span>Bin_At ?bin ?locbn<span class="o">)</span>
+            <span class="o">(</span>Bin_Subject ?bin ?subbn<span class="o">)</span>
+        <span class="o">)</span>
+    <span class="o">)</span>
+
+    <span class="p">;</span> Move the robot from one location to another.
+    <span class="o">(</span>:action move
+        :parameters <span class="o">(</span>?bot - robot ?oldloc - location ?newloc - location<span class="o">)</span>
+        :precondition <span class="o">(</span>and
+            <span class="p">;</span> ADD ALL PRECONDITIONS HERE
+        <span class="o">)</span>
+        :effect <span class="o">(</span>and
+            <span class="p">;</span> ADD ALL EFFECTS HERE
+        <span class="o">)</span>
+    <span class="o">)</span>
+<span class="o">)</span>
+</pre></div>
+</div>
+<div class="section" id="predicates">
+<h3>Predicates<a class="headerlink" href="#predicates" title="Permalink to this headline">¶</a></h3>
+<blockquote>
+<div><table class="docutils align-default">
+<colgroup>
+<col style="width: 50%" />
+<col style="width: 50%" />
+</colgroup>
+<thead>
+<tr class="row-odd"><th class="head"><p><strong>Predicate</strong></p></th>
+<th class="head"><p>Is true if</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p><strong>(Book_At ?a - book ?b - location)</strong></p></td>
+<td><p>book ?a is at location ?b</p></td>
+</tr>
+<tr class="row-odd"><td><p><strong>(Bin_At ?a - bin ?b - location)</strong></p></td>
+<td><p>bin ?a is at location ?b</p></td>
+</tr>
+<tr class="row-even"><td><p><strong>(Book_Subject ?a - book ?b - subject)</strong>:</p></td>
+<td><p>subject of the book ?a is ?b</p></td>
+</tr>
+<tr class="row-odd"><td><p><strong>(Book_Size ?a - book ?b - size)</strong>:</p></td>
+<td><p>size of the book ?a is ?b</p></td>
+</tr>
+<tr class="row-even"><td><p><strong>(Bin_Subject ?a - bin ?b - subject)</strong>:</p></td>
+<td><p>bin ?a stores books of subject ?b</p></td>
+</tr>
+<tr class="row-odd"><td><p><strong>(Bin_Size ?a - bin ?b - size)</strong>:</p></td>
+<td><p>bin ?a stores books of size ?b</p></td>
+</tr>
+<tr class="row-even"><td><p><strong>(Robot_At ?a - robot ?b - location)</strong>:</p></td>
+<td><p>robot ?a is at location ?b</p></td>
+</tr>
+<tr class="row-odd"><td><p><strong>(Empty_Basket ?a - robot)</strong>:</p></td>
+<td><p>the basket on top of ?a is empty</p></td>
+</tr>
+<tr class="row-even"><td><p><strong>(In_Basket ?b - book)</strong>:</p></td>
+<td><p>the book ?b is in the basket</p></td>
+</tr>
+</tbody>
+</table>
+</div></blockquote>
+</div>
+<div class="section" id="actions">
+<h3>Actions<a class="headerlink" href="#actions" title="Permalink to this headline">¶</a></h3>
+<ol class="arabic simple">
+<li><p><strong>Pick</strong>: This action picks the book from floor and puts it in the basket on the Turtlebot3. The capacity of the basket is only 1 book.</p></li>
+<li><p><strong>Place</strong>: This action places the book in the bin from the basket on the Turtlebot3.</p></li>
+<li><p><strong>Move</strong>: This action is used to change the location of the Turtlebot3.</p></li>
+</ol>
+<p>Your task is to complete the pick and move actions using the predicates above.
+We have already filled in the list of parameters needed.
+Think intuitively using the given parameters and determine what the preconditions will be and what the effects are using the action descriptions above.</p>
+</div>
+</div>
+<div class="section" id="completing-problem-pddl">
+<h2>Completing problem.pddl<a class="headerlink" href="#completing-problem-pddl" title="Permalink to this headline">¶</a></h2>
+<ol class="arabic">
+<li><p>Generate a new problem.pddl file by executing</p>
+<blockquote>
+<div><div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>rosrun hw2 refinement.py --subjects &lt;subjects&gt; --books &lt;books&gt; --seed &lt;seed&gt; --generate-only
+</pre></div>
+</div>
+</div></blockquote>
+</li>
+<li><p>A new problem.pddl file will be created at ~/catkin_ws/src/hw2. This file will not have any goal condition.</p></li>
+<li><p>The problem.pddl the high-level problem, the low-level is also created for you to view in Gazebo.</p>
+<blockquote>
+<div><div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>Terminal <span class="m">1</span>: roscore
+Terminal <span class="m">2</span>: roslaunch hw2 maze.launch
+</pre></div>
+</div>
+</div></blockquote>
+</li>
+<li><p>Use ~/catkin_ws/src/hw2/hw2_kill.sh to cleanup the environment (like exiting Gazebo etc).</p></li>
+<li><p>The file contains an incomplete code section that you need to fill with the goal.</p></li>
+<li><p>For your task, you will use refinement.py to generate a new problem.pddl file for which the initial state and objects are already filled in.</p></li>
+<li><p>You will be required to write a generic goal condition for any invocation of refinement.py</p></li>
+<li><p>Open hw2_task.py located at ~/catkin_ws/src/hw2/scripts/ and complete the get_goal_string() method.</p></li>
+<li><p>Write your code so that it produces a goal condition that places all books in the corresponding bin (trolley). For example, if the book B is of subject A, and its size is L, your goal condition must be written so that B is placed in a bin T whose subject is A and size is L.</p>
+<blockquote>
+<div><div class="admonition note">
+<p class="admonition-title">Note</p>
+<p><strong>Hint for extra credit</strong>: The goal should be that for all the books, there should be a bin with the same subject and size such that the location of book and respective bin is same.</p>
+</div>
+</div></blockquote>
+</li>
+<li><p>You can print the parameters to see how changing the subjects, books in refinement.py will change the problem file generated.</p>
+<blockquote>
+<div><div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>Your code must generate valid PDDL! Check out the Tips section below for some useful resources on PDDL. Also, review the PDDL tutorial again which can help prepare you for this task.</p>
+</div>
+</div></blockquote>
+</li>
+<li><p>A sample goal condition that moves the robot to any random location is provided in hw2_task.py which can give you an idea on how to proceed with the task.</p></li>
+<li><p>This stock goal condition depends on a correct domain.pddl written and can be refined and verified in Gazebo without requiring the pick action to be implemented.</p></li>
+</ol>
+</div>
+<div class="section" id="checking-correctness-of-pddl-files">
+<h2>Checking correctness of pddl files<a class="headerlink" href="#checking-correctness-of-pddl-files" title="Permalink to this headline">¶</a></h2>
+<p>We have provided a couple planners for you to use. These are located at ~/catkin_ws/src/hw2/planners/</p>
+<p>You can use Fast Downward (FD) to verify if your PDDL files correct.
+Once you have completed the domain.pddl and problem.pddl you can use a
+high-level planner to verify that a high level plan can be found.</p>
+<div class="section" id="fast-downward">
+<h3>Fast Downward<a class="headerlink" href="#fast-downward" title="Permalink to this headline">¶</a></h3>
+<ol class="arabic">
+<li><p>Run FD. Ensure that you have updated goal in problem.pddl before this command.</p>
+<blockquote>
+<div><div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>./planners/FD/fast-downward.py domain.pddl problem.pddl --search <span class="s2">&quot;lazy_greedy([ff()], preferred=[ff()])&quot;</span>
+</pre></div>
+</div>
+</div></blockquote>
+</li>
+<li><p>You can change the parameters given to FD. For its usage simply run fast-downward.py without any parameters. To get complete list of parameters pass -h as an argument.</p>
+<blockquote>
+<div><div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>$ ./planners/FD/fast-downward.py
+usage: fast-downward.py <span class="o">[</span>-h<span class="o">]</span> <span class="o">[</span>--show-aliases<span class="o">]</span> <span class="o">[</span>--run-all<span class="o">]</span> <span class="o">[</span>--translate<span class="o">]</span>
+                        <span class="o">[</span>--search<span class="o">]</span>
+                        <span class="o">[</span>--translate-time-limit TRANSLATE_TIME_LIMIT<span class="o">]</span>
+                        <span class="o">[</span>--translate-memory-limit TRANSLATE_MEMORY_LIMIT<span class="o">]</span>
+                        <span class="o">[</span>--search-time-limit SEARCH_TIME_LIMIT<span class="o">]</span>
+                        <span class="o">[</span>--search-memory-limit SEARCH_MEMORY_LIMIT<span class="o">]</span>
+                        <span class="o">[</span>--validate-time-limit VALIDATE_TIME_LIMIT<span class="o">]</span>
+                        <span class="o">[</span>--validate-memory-limit VALIDATE_MEMORY_LIMIT<span class="o">]</span>
+                        <span class="o">[</span>--overall-time-limit OVERALL_TIME_LIMIT<span class="o">]</span>
+                        <span class="o">[</span>--overall-memory-limit OVERALL_MEMORY_LIMIT<span class="o">]</span>
+                        <span class="o">[</span>--alias ALIAS<span class="o">]</span> <span class="o">[</span>--build BUILD<span class="o">]</span> <span class="o">[</span>--debug<span class="o">]</span> <span class="o">[</span>--validate<span class="o">]</span>
+                        <span class="o">[</span>--log-level <span class="o">{</span>debug,info,warning<span class="o">}]</span> <span class="o">[</span>--plan-file FILE<span class="o">]</span>
+                        <span class="o">[</span>--sas-file FILE<span class="o">]</span> <span class="o">[</span>--keep-sas-file<span class="o">]</span> <span class="o">[</span>--portfolio FILE<span class="o">]</span>
+                        <span class="o">[</span>--portfolio-bound VALUE<span class="o">]</span> <span class="o">[</span>--portfolio-single-plan<span class="o">]</span>
+                        <span class="o">[</span>--cleanup<span class="o">]</span>
+                        INPUT_FILE1 <span class="o">[</span>INPUT_FILE2<span class="o">]</span> <span class="o">[</span>COMPONENT_OPTION ...<span class="o">]</span>
+fast-downward.py: error: translator needs one or two input files
+</pre></div>
+</div>
+</div></blockquote>
+</li>
+<li><p>If you do not get the help output above you might have an incorrect system configuration.</p></li>
+<li><p>If your domain and problem files are <strong>syntactically correct</strong>, you will get a plan that can be easily viewed in the terminal.</p></li>
+<li><p>Also, a correct domain and goal will lead to a correct refinement and the robot will successfully pick and place all books in Gazebo.</p></li>
+</ol>
+</div>
+</div>
+<div class="section" id="generating-refinements">
+<h2>Generating Refinements<a class="headerlink" href="#generating-refinements" title="Permalink to this headline">¶</a></h2>
+<ol class="arabic">
+<li><p>This step runs refinement.py without –generate-only and actually produces refinements that can be executed in Gazebo.</p></li>
+<li><p>Run rosrun hw2 refinement.py -h to get basic help.</p>
+<blockquote>
+<div><div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>$ rosrun hw2 refinement.py -h
+usage: refinement.py <span class="o">[</span>-h<span class="o">]</span> <span class="o">[</span>--subjects SUBJECTS<span class="o">]</span> <span class="o">[</span>--books BOOKS<span class="o">]</span> <span class="o">[</span>--seed SEED<span class="o">]</span>
+                     <span class="o">[</span>--file-name FILE_NAME<span class="o">]</span> <span class="o">[</span>--clean<span class="o">]</span>
+optional arguments:
+  -h, --help            show this <span class="nb">help</span> message and <span class="nb">exit</span>
+  --subjects SUBJECTS   No of book subjects.
+  --books BOOKS         The number of books in the grid.
+  --seed SEED           The random seed
+  --file-name FILE_NAME
+                        Store results in &lt;file&gt; in the project root directory.
+  --clean               Cleanup the existing csv files
+</pre></div>
+</div>
+</div></blockquote>
+</li>
+<li><p>In a terminal, run the following:</p>
+<blockquote>
+<div><div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>rosrun hw2 refinement.py --subjects &lt;subjects&gt; --books &lt;books&gt; --seed &lt;seed&gt;
+</pre></div>
+</div>
+<p>Provided that your domain.pddl and hw2_task.py are implemented correctly, this will run
+successfully without errors. If not, an exception msg will be printed to the
+screen.</p>
+</div></blockquote>
+</li>
+<li><p>You can view the high-level planner log found at ~/catkin_ws/src/hw2/planner_output.log to see the result of the high-level planner.</p></li>
+<li><p>Also, the results of your latest run can be found as the last line of ~/catkin_ws/src/hw2/results.csv</p></li>
+<li><p>Running rosrun hw2 refinement.py with –clean will clear the results.csv file or you can simply delete it.</p></li>
+</ol>
+</div>
+<div class="section" id="running-gazebo">
+<h2>Running Gazebo<a class="headerlink" href="#running-gazebo" title="Permalink to this headline">¶</a></h2>
+<p>#. Assuming you have a successful execution of refinement.py, a log of the environment
+and the refinement is created in ~/catkin_ws/src/hw2/results.csv</p>
+<ol class="arabic">
+<li><p>The latest run is always the last line of the file.</p></li>
+<li><p>If you want to run the latest run of refinement.py, execute the following command.</p>
+<blockquote>
+<div><div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>rosrun hw2 gazebo.py --input-file ~/catkin_ws/src/hw2/results.csv
+</pre></div>
+</div>
+</div></blockquote>
+</li>
+<li><p>Alternatively, if you want to run specific run on Gazebo execute the following comamnd.</p>
+<blockquote>
+<div><div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>rosrun hw2 gazebo.py --input-file ~/catkin_ws/src/hw2/results.csv --line &lt;line&gt;
+</pre></div>
+</div>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>If your domain.pddl and problem.pddl are not written correctly, you might see
+incorrect execution on Gazebo!</p>
+</div>
+</div></blockquote>
+</li>
+</ol>
+</div>
+<div class="section" id="submission-instructions">
+<h2>Submission Instructions<a class="headerlink" href="#submission-instructions" title="Permalink to this headline">¶</a></h2>
+<ol class="arabic simple">
+<li><p>Please run ~/catkin_ws/src/hw2/submit.sh to that will generate a submit.csv file in ~/catkin_ws/src/hw2/</p></li>
+<li><p>Make sure that the file is present! If submit.sh has problems there will be some output printed to the terminal screen, else it will be blank.</p></li>
+<li><p>Zip up the hw2 directory (7z a &lt;asurite_ASU#&gt;.zip ~/catkin_ws/src/hw2). An example name is jdoe_120444222.zip</p></li>
+<li><p>Submit to Gradescope.</p></li>
+</ol>
+</div>
+<div class="section" id="testing-the-refinements">
+<h2>Testing the refinements<a class="headerlink" href="#testing-the-refinements" title="Permalink to this headline">¶</a></h2>
+<p>We will be grading your changes based on whether they generate correct refinements or not.</p>
+<ol class="arabic simple">
+<li><p>Run ~/catkin_ws/src/hw2/test_cases.sh to generate ~/catkin_ws/src/hw2/src/test_cases.csv</p></li>
+<li><p>Submit this file to gradescope using the submission instructions and it will auto-grade it for you.</p></li>
+<li><p>The auto-grader will also check your code for the extra-credit section.</p></li>
+<li><p>Finally, you can also submit any new test cases by modifying the same file, however, our auto-grader will only provide feedback on up to 10 test cases. You can resubmit with others if you wish.</p></li>
+<li><p>We will be keeping the testcase feedback locked until a certain time has elapsed. We will make an announcement once it is available.</p></li>
+<li><p>You can use the stock goal task to inspect how refinements generated in .csv look like once you implement the correct move action template.</p></li>
+</ol>
+</div>
+<div class="section" id="tips-and-suggestions">
+<h2>Tips and Suggestions<a class="headerlink" href="#tips-and-suggestions" title="Permalink to this headline">¶</a></h2>
+<ol class="arabic simple">
+<li><p>White space, incorrect parentheses are common problems when writing PDDL. The high-level planner can be used to quickly verify if your PDDL is valid or not. It will usually give a descriptive error message of what went wrong while parsing the PDDL.</p></li>
+<li><p>Review the PDDL tutorials and other resources for learning how to write PDDL.</p></li>
+<li><p>Test your implementation with smaller number of books and smaller number of subjects to see if it works as expected. On a Gazebo execution, the robot must pick up all books and place them in bins. Which bins are correct is a bit harder to check in Gazebo however a general indicator is it dropping books in different bins. Your action preconditions must ensure this!</p></li>
+<li><p>If refinement of the move action fails, check visually on Gazebo if actually there is no refinement possible. This can provide hints as to whether your domain and problem are incorrectly written since the world generated is independent of the domain and problem file. You can always run gazebo.py after refinement.py to open a world view of the last problem generated.</p></li>
+<li><p>Use ~/catkin_ws/src/hw2/hw2_kill.sh to kill everything related to hw2 and start afresh if your terminals get stuck etc.</p></li>
+<li><p>At times, the TurtleBot takes some time to perform an action, so wait for some time if no movement is visible.</p></li>
+<li><p>Not all problems have valid refinements, this is because the robot can only carry one book in the basket at a time.</p></li>
+<li><p>Even if refinement.py fails to generate any plan, it still writes the world to results.csv, you can run Gazebo to just view the world and get a visual idea of what the world looks like, but note that it will exit relatively quickly, so you can manually open Gazebo by typing roscore in one terminal and roslaunch hw2 maze.launch in another terminal.</p></li>
+<li><p>–generate-only also creates the world that can be easily viewed in Gazebo by using the instructions in the point above.</p></li>
+<li><p>You might need to recompile the FF planner provided if it does not execute on your system.</p></li>
+<li><p>Gazebo takes a bit long when loading the environment for the first time. So if you see a black screen do not worry!</p></li>
+<li><p>Check the discussion page on Canvas to see if the problem you are facing is already answered. If not, start a new discussion.</p></li>
+</ol>
+<div class="section" id="resources">
+<h3>Resources<a class="headerlink" href="#resources" title="Permalink to this headline">¶</a></h3>
+<ol class="arabic simple">
+<li><p>A simple place to start would be <a class="reference external" href="https://www.dewilkins.org/papers/pddl.pdf">PDDL Version 1.2 Manual</a>.</p></li>
+<li><p>If you are looking for an exhaustive resource, you can refer <a class="reference external" href="https://www.morganclaypool.com/doi/abs/10.2200/S00900ED2V01Y201902AIM042">An Introduction to the PDDL</a>. This book is available on ASU’s Library.</p></li>
+<li><p>A collection of PDDL Domains and Problems is available on <a class="reference external" href="https://github.com/potassco/pddl-instances">this Github Repository</a>. You can use these domains and problems to familiarize yourself with how the high-level planners work.</p></li>
+<li><p>FastDownward homepage: <a class="reference external" href="http://www.fast-downward.org/">http://www.fast-downward.org/</a></p></li>
+<li><p>FF planner is located at ~/catkin_ws/src/hw2/planners/</p></li>
+</ol>
+</div>
+</div>
+</div>
+<div class="section" id="api">
+<h1>API<a class="headerlink" href="#api" title="Permalink to this headline">¶</a></h1>
+<p>This API only lists the part of code that you will have to use to complete this Homework and Extra Credit.
+You are free to explore the code by looking into each file separately, but do not change anything other than hw2_task.py, test_cases.sh, ,planner.py, domain.pddl, and problem.pddl.</p>
+<p>As a part of this assignment, you will only need to modify:</p>
+<ol class="arabic simple">
+<li><p>hw2_task.py</p></li>
+<li><p>domain.pddl</p></li>
+<li><p>problem.pddl</p></li>
+</ol>
+<p>You may also need to modify the following:</p>
+<ol class="arabic simple">
+<li><p>planner.py</p></li>
+</ol>
+<p>Below is a list of some other utility files:</p>
+<ol class="arabic simple">
+<li><p>submit.sh: Used to generate the submit.csv that you need for submitting this homework.</p></li>
+<li><p>test_cases.sh: Used to generate test_cases.csv that you can submit to gradescope for validating your solution. You can include your own test cases here (ie. modify this one).</p></li>
+<li><p>hw2_kill.sh: Used to clean up the environment. Use this first if you face problems and errors.</p></li>
+<li><p>planner_output.log: View the results of the high-level planner after running refinement.py</p></li>
+</ol>
+<p>Browse through the source code of the files above to get a better idea of the
+expectations.</p>
+</div>
+
+
+           </div>
+           
+          </div>
+          <footer>
+  
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+      
+      
+        <a href="index.html" class="btn btn-neutral float-left" title="Welcome to CSE 471 Fall 2020 - HW2!" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>
+      
+    </div>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+        
+        &copy; Copyright 2019, AAIR Lab, ASU
+
+    </p>
+  </div>
+    
+    
+    
+    Built with <a href="http://sphinx-doc.org/">Sphinx</a> using a
+    
+    <a href="https://github.com/rtfd/sphinx_rtd_theme">theme</a>
+    
+    provided by <a href="https://readthedocs.org">Read the Docs</a>. 
+
+</footer>
+
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  
+
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(false);
+      });
+  </script>
+
+  
+  
+    
+   
+
+</body>
+</html>

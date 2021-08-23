@@ -1,0 +1,336 @@
+==================
+Plagiarism Warning
+==================
+Powerful copy-detection systems will be used as part of grading, so please **DO NOT** submit/use any piece of code that is not **your own** work. These systems can easily catch instances where users change variable names, etc. from copied code.
+
+If you are stuck at any point, you can approach the professor or TA for help.
+
+=================================
+Homework 1 - Programming 
+=================================
+
+Welcome to Programming section of Homework 1 for CSE 471 - Fall 2020.
+
+This document contains several instructions to help you with the running
+and submitting the assignment.
+
+=================================
+Setting up the **hw1** Directory
+=================================
+
+We assume that you have completed the setup as instructed in Homework 0.
+
+#. Unzip the "hw1.zip" file that you have downloaded from Canvas.
+
+#. Copy the "hw1" folder that was unzipped to `~/catkin_ws/src/`.
+
+	.. code-block:: bash
+
+	   cp -r <download_path>/hw1/ ~/catkin_ws/src/
+
+#. Change the permission of all Python scripts to make them executable.
+
+	.. code-block:: bash
+
+	   chmod u+x ~/catkin_ws/src/hw1/scripts/*.py
+
+#. Run catkin_make from your catkin workspace.
+
+	.. code-block:: bash
+
+	   cd ~/catkin_ws && catkin_make
+
+#. Source `setup.bash`.
+
+	.. code-block:: bash
+
+		source ~/catkin_ws/devel/setup.bash
+
+========================
+Environment Description
+========================
+
+The image below shows an example of the maze environment that the Homework 1 turtlebot3 operates in.
+The goal is the red can; all other cans are obstacles that need to be avoided.
+
+.. figure:: ./images/cans.png
+		:scale: 50 %
+		:alt: A sample maze
+
+Some of the terms that we use throughout the assignment are:
+
+#. Grid Dimensions: Size of the square grid.
+	.. note ::
+		Actual grid size used for navigation is different from what is seen in Gazebo environment. Each of the square seen in Gazebo is divided into 4 equal squares. 
+
+		.. list-table::
+			:header-rows: 0
+
+			* - .. figure:: ./images/grid.png
+
+			      Fig 1. Grid visible in Gazebo
+
+			  - .. figure:: ./images/grid_actual.png
+
+			      Fig 2. Actual navigation grid
+
+		Hence, if you have to go from point A to B in Gazebo environment using 'MoveF' action, you will have to give 'MoveF' command twice. If you give the 'MoveF' command once, the TurtleBot will stop at T.
+
+#. Goal: A can of red color.
+#. Obstacles: Smaller cans obstructing the TurtleBot's path.
+#. Actions: Actions includes {MoveF, TurnCW, TurnCCW}. Move actions move the turtlebot forward along an edge, and Turn actions rotate it clockwise or counterclockwise.
+    * Cost of the MoveF action is 1.
+    * Cost of the TurnCW and TurnCCW actions is 2.
+#. State:  State of the turtlebot represented as (x, y, :math:`\phi`) where x and y are coordinates, :math:`\phi` is an orientation in {NORTH, SOUTH, EAST, WEST}.  
+	.. figure:: ./images/orientation.png
+			:scale: 35 %
+			:alt: A sample maze
+
+===============================
+Implementing Search Algorithms
+===============================
+
+* Modify the `compute_g()` and `compute_h()` methods in the `evaluate.py` file. We have provided a basic template where you should write your code.
+* Do not modify any other file. Make all the changes you need in `evaluate.py` only.
+* Unless otherwise specified, use the Manhattan heuristic whenever you need to return a heuristic value.
+* Modifying evaluate.py 
+    * Do not modify the function signature of existing methods.
+	* Remove the `raise NotImplementedError` code block and replace it with the code to the compute the g-value or h-value and return this value.
+	* The returned value must be a positive integer or 0.
+* Both `compute_g()` and `compute_h()` have 3 parameters passed to them.
+    * algorithm - A string that represents which algorithm is running. This is passed as a command line argument to the program.
+        The required algorithms you need to handle are:
+            #. bfs - Breadth First Search
+            #. ucs - Uniform Cost Search
+            #. gbfs - Greedy **Best** First Search
+            #. astar - A* Search
+            #. custom-astar - (Extra credit) A* with a custom heuristic.
+    * node - A Node (`node.py`) object that is being evaluated in the search 
+        tree. Note that each node has all its fields already initialized prior
+        to calling these functions. More information about the Node class can
+        be found in the API located at the end of this document..
+    * goal_state - A State (`problem.py`) object that represents the goal state.
+        More information about the State class can be found in the API located
+        at the end of this document.
+
+============================
+Testing your Implementation
+============================
+
+**Follow these steps to locally test your implementation.**
+
+Fill in the necessary blocks in `evaluate.py` by removing the `raise NotImplementedError` and replacing it with your code.
+If you choose not to implement an algorithm (for example the extra credit work) simply leave the statement unchanged in
+both `compute_g()` and `compute_h()` for that algorithm.
+
+Once done, you need to execute `rosrun hw1 search.py` with the appropriate algorithm.
+For example, If you implemented `compute_g()` and `compute_h()` for "bfs":
+
+.. code-block:: bash
+
+    rosrun hw1 search.py --algorithm bfs
+
+This will also post plenty of output to your console giving you some valuable information about your implementation including
+any errors that were encountered. If the error field is None then that means that your implementation ran without issues.
+
+.. code-block:: bash
+
+    ==========================
+    Dimension..........: 5
+    Obstacles..........: 0
+    Seed...............: 1599124437
+    Algorithm..........: bfs
+    Error..............: NotImplementedError
+    Time Taken.........: 0.01
+    Nodes expanded.....: 0
+    Plan Length........: 0
+    Plan...............: []
+
+
+In the code block above, the Error output is not None. This means that there were errors encountered and you would need to debug
+the implementation. You can modify any file to debug your code, however, your final test code should only modify `evaluate.py` and
+leave all the other files untouched.
+   
+search.py
+==========
+`search.py` contains several options that you can specify to change the world
+generated so that you can test different worlds.
+
+.. code-block:: bash
+
+    rosrun hw1 search.py -h
+    usage: search.py [-h] [--dimension DIMENSION] [--obstacles OBSTACLES]
+                     [--seed SEED]
+                     [--algorithm {all,bfs,ucs,gbfs,astar,custom-astar}]
+                     [--submit] [--output-file OUTPUT_FILE]
+
+    optional arguments:
+      -h, --help            show this help message and exit
+      --dimension DIMENSION
+                            The dimension 'n' of the n x n grid.
+      --obstacles OBSTACLES
+                            The number of obstacles in the grid.
+      --seed SEED           The random seed
+      --algorithm {all,bfs,ucs,gbfs,astar,custom-astar}
+                            The algorithm to run
+      --submit              Run the experiments required for submission
+      --output-file OUTPUT_FILE
+                            Store the output in the specified file
+
+For example to generate a world with a dimension of 5 and 2 obstacles and test
+with the "ucs" algorithm, enter the following in the terminal.
+
+.. code-block:: bash
+
+    rosrun hw1 search.py --dimension 5 --obstacles 2 --algorithm ucs
+    
+The output contains all data to reproduce the results. You can use "all" for
+algorithms to run all algorithms.
+
+=================================
+Checking Execution on Turtlebot3
+=================================
+
+Once you have an implementation working, you can run the found solution on
+Gazebo. To do this, you need to provide an argument that instructs `search.py`
+to save the results to an output file.
+
+.. code-block:: bash
+
+    rosrun hw1 search.py --output-file /tmp/test.csv
+    
+The above command will run the default algorithm (all) along with the default
+dimension, obstacles and seed for the world and store the output in
+`/tmp/test.csv`. You can open this file in software like Excel or a simple
+text editor like Notepad++.
+
+To run Gazebo, execute
+
+.. code-block:: bash
+    
+    rosrun hw1 gazebo.py --input-file /tmp/test.csv
+    
+This will open Gazebo and run each solution in the specified file.
+
+If you only want to run a single solution in the specified file, you can pick
+which solution to execute by specifying the line number that the solution
+occurs in the solution file (lines are numbered starting with 1).
+
+.. code-block:: bash
+
+    rosrun hw1 gazebo.py --input-file /tmp/test.csv --line 3
+    
+This will run the solution occuring at line 3 (provided the file has 3 lines)
+and will exit after that.
+
+==================================================
+Preparing your Submission to Submit to Gradescope
+==================================================
+
+1. When you have finished implementing all the algorithms you need to use the submit
+mode of `search.py`
+
+**Run the following command to ready the submission files**
+
+.. code-block:: bash
+
+    rosrun hw1 search.py --submit
+    
+This will run 100 different world combinations and each one of them will be run
+with a time limit of 5 mins (300 seconds). A file called `hw1_results.csv` will
+be created in the `~/catkin_ws/src/hw1/scripts/` directory which will contain
+results of the run. **HINT**: Make sure that there are no TimeoutErrors in the
+results. If there are, then its likely your implementation is incorrect. 
+
+.. warning::
+
+    The submission runs several tests so make sure you run this command plenty
+    of time before the submission deadline.
+
+.. note:: 
+
+    Submit mode will not produce Debug output. Instead `hw1_results.csv`
+    will contain the Debug output in a .csv format. 
+
+Execute the following to ensure that the `hw1_results.csv` file was created.
+
+.. code-block:: bash
+
+    ls ~/catkin_ws/src/hw1/scripts/
+    /home/cse471/catkin_ws/src/hw1/scripts/hw1_results.csv
+
+2. The next step is to create the plots. You can open the `hw1_results.csv` in
+software like Excel or write your own code to process the file and generate the
+required plots (see the assignment question on the description of what needs
+to be plotted).
+
+Please store the plots in the same directory (`~/catkin_ws/src/hw1/scripts/`).
+Name the plot files as `task2.png` and `task3.png` for Tasks 2 and 3 
+respectively. While we do allow other file extensions, .png is the recommended
+format in which we prefer the plots.
+
+Submitting Your Homework
+=========================
+
+You now need to simply zip the `~/catkin_ws/src/hw1/` directory and upload it
+to Gradescope. The zip file should be named as <first name>_<asu_id>_hw1.zip.
+Upload your zip file on gradescope under Q11.
+
+.. warning:: 
+
+    Please make sure that the zipped file contains hw1_results.csv, task1.png
+    and task2.png. Also make sure that you have not renamed any file that was
+    originally provided. 
+    
+    Do not create any new files since there will be no
+    way for the autograder to know that it has to copy them over.
+
+=====================
+Tips and Suggestions
+=====================
+
+#. The API section below contains all accessors required to complete this assignment.
+#. Test your algorithm with smaller grid or smaller number of obstacles to see if it works as expected.
+#. Since the obstacles and mazes are generated dynamically, sometimes it is possible that there is no path from initial state to goal state. If your algorithm returned empty action_list, check once if there is path from initial state to goal state.
+#. You need not start a new run to record running time if there is no path between initial state and goal state. The time taken for this case should also be considered while taking average of 5 runs.
+#. At times, the TurtleBot takes some time to perform an action, so wait for some time if no movement is visible.
+#. Check the slack channels to see if the problem you are facing is already answered. If not, start a new discussion.
+
+Hints for Designing the Extra Credit Heuristic
+===============================================
+In the section **Environment Description**, you will find that action costs are
+different for different actions. Question 1 of the homework provides a hint
+that you can use in designing the heuristic.
+
+Remember the cost trade-off. Your heuristic must not be too expensive to compute.
+One extreme case is to run Breadth FS from a state and return the plan length from
+that state as the heuristic value. This gives you a very good estimate, since
+you run Breadth FS internally however the time to compute a single state's
+heuristic value is quite large which makes it effectively useless since we could
+have just done a Breadth FS anyways. Doing BFS or any other of the implemented
+algorithms as the extra credit heuristic won't get you extra credit!
+
+====
+API
+====
+
+class State
+============
+.. moduleauthor:: AAIR Lab, ASU <aair.lab@asu.edu>
+
+.. automodule:: problem
+	:noindex:
+
+.. autoclass:: State
+   :members:
+
+class Node
+===========
+.. moduleauthor:: AAIR Lab, ASU <aair.lab@asu.edu>
+
+.. automodule:: node
+	:noindex:
+
+.. autoclass:: Node
+   :members:
+
